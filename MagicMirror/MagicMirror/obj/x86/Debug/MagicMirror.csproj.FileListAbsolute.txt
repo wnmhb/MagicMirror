@@ -1,0 +1,40 @@
+c:\users\wadexmy\documents\visual studio 2010\Projects\MagicMirror\MagicMirror\bin\Debug\MagicMirror.exe
+c:\users\wadexmy\documents\visual studio 2010\Projects\MagicMirror\MagicMirror\bin\Debug\MagicMirror.pdb
+c:\users\wadexmy\documents\visual studio 2010\Projects\MagicMirror\MagicMirror\obj\x86\Debug\MainWindow.baml
+c:\users\wadexmy\documents\visual studio 2010\Projects\MagicMirror\MagicMirror\obj\x86\Debug\MainWindow.g.cs
+c:\users\wadexmy\documents\visual studio 2010\Projects\MagicMirror\MagicMirror\obj\x86\Debug\App.g.cs
+c:\users\wadexmy\documents\visual studio 2010\Projects\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror_MarkupCompile.cache
+c:\users\wadexmy\documents\visual studio 2010\Projects\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror.g.resources
+c:\users\wadexmy\documents\visual studio 2010\Projects\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror.Properties.Resources.resources
+c:\users\wadexmy\documents\visual studio 2010\Projects\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror.csproj.GenerateResource.Cache
+c:\users\wadexmy\documents\visual studio 2010\Projects\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror.exe
+c:\users\wadexmy\documents\visual studio 2010\Projects\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror.pdb
+C:\Users\wadexmy\Documents\Visual Studio 2010\Projects\MagicMirror\MagicMirror\obj\x86\Debug\App.baml
+E:\Development\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror.exe
+E:\Development\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror.pdb
+E:\Development\MagicMirror\MagicMirror\bin\Debug\MagicMirror.exe
+E:\Development\MagicMirror\MagicMirror\bin\Debug\MagicMirror.pdb
+E:\Development\MagicMirror\MagicMirror\obj\x86\Debug\MainWindow.baml
+E:\Development\MagicMirror\MagicMirror\obj\x86\Debug\App.baml
+E:\Development\MagicMirror\MagicMirror\obj\x86\Debug\MainWindow.g.cs
+E:\Development\MagicMirror\MagicMirror\obj\x86\Debug\App.g.cs
+E:\Development\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror_MarkupCompile.cache
+E:\Development\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror.g.resources
+E:\Development\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror.Properties.Resources.resources
+E:\Development\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror.csproj.GenerateResource.Cache
+E:\Development\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror_MarkupCompile.lref
+E:\Development\MagicMirror\MagicMirror\bin\Debug\MagicMirror.exe.config
+E:\Development\MagicMirror\MagicMirror\bin\Debug\Images\Flower1.jpg
+E:\Development\MagicMirror\MagicMirror\bin\Debug\Images\Flower2.jpg
+E:\Development\MagicMirror\MagicMirror\bin\Debug\Images\Leaf1.jpg
+E:\Development\MagicMirror\MagicMirror\bin\Debug\Images\Leaf2.jpg
+E:\Development\MagicMirror\MagicMirror\bin\Debug\Images\Winter1.jpg
+E:\Development\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror_Content.g.cs
+E:\Development\MagicMirror\MagicMirror\obj\x86\Debug\Views\FittingRoom.baml
+E:\Development\MagicMirror\MagicMirror\obj\x86\Debug\Views\ProductTryingOnControl.baml
+E:\Development\MagicMirror\MagicMirror\obj\x86\Debug\Views\SelectedProductsControl.baml
+E:\Development\MagicMirror\MagicMirror\obj\x86\Debug\Views\FittingRoom.g.cs
+E:\Development\MagicMirror\MagicMirror\obj\x86\Debug\Views\ProductTryingOnControl.g.cs
+E:\Development\MagicMirror\MagicMirror\obj\x86\Debug\Views\SelectedProductsControl.g.cs
+E:\Development\MagicMirror\MagicMirror\obj\x86\Debug\Views\ProductsSlideShow.baml
+E:\Development\MagicMirror\MagicMirror\obj\x86\Debug\Views\ProductsSlideShow.g.cs

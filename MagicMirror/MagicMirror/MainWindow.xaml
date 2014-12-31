@@ -1,0 +1,9 @@
+﻿<Window x:Class="MagicMirror.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:MagicMirror.Model"
+        Title="MainWindow"  Style="{StaticResource MainWinStyle}"
+        WindowStartupLocation="CenterScreen">
+    <Frame x:Name="NavigationFrame" Source="/Views/FittingRoom.xaml" BorderThickness="0"  Opacity="1"
+           NavigationUIVisibility="Hidden" Navigated="NavigationFrame_Navigated"></Frame>
+</Window>

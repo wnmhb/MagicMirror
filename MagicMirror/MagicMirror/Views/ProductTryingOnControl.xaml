@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="MagicMirror.Views.ProductTryingOnControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+             d:DesignHeight="500" d:DesignWidth="500">
+    <UserControl.Resources>
+
+        <SolidColorBrush x:Key="brushWatermarkBackground" Color="White" />
+        <SolidColorBrush x:Key="brushWatermarkForeground" Color="LightSteelBlue" />
+        <SolidColorBrush x:Key="brushWatermarkBorder" Color="Indigo" />
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"></RowDefinition>
+            <RowDefinition Height="0.6*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <!--主要信息区-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                <ColumnDefinition Width="0.4*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Margin="10,10,0,10" Source="{Binding MainPhoto, Mode=TwoWay}" Stretch="Fill"></Image>
+
+            <StackPanel Grid.Column="1" Margin="5,10,10,10" Background="#66FFFFFF">
+                <TextBlock Text="{Binding Name, Mode=TwoWay}"></TextBlock>
+                <StackPanel  Orientation="Horizontal" >
+                    <TextBlock  FontStyle="Italic">ref</TextBlock>
+                    <TextBlock Text="{Binding RefId, Mode=TwoWay}" FontStyle="Italic"></TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,20">
+                    <TextBlock Text="{Binding Price, Mode=TwoWay}"></TextBlock>
+                    <TextBlock Text="{Binding Unit, Mode=TwoWay}"></TextBlock>
+                </StackPanel>
+
+                <StackPanel  Margin="0,10">
+                    <TextBlock>Color</TextBlock>
+                    <Image></Image>
+                </StackPanel>
+
+                <StackPanel  Margin="0,10">
+                    <TextBlock>Size</TextBlock>
+                    <Image></Image>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <!--操作功能区-->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <TextBlock Margin="10,5" FontSize="20">COMMENTS</TextBlock>
+            
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock Margin="10" Text="Be the first to comment" FontStyle="Italic" Foreground="{StaticResource brushWatermarkForeground}"
+                           Grid.Column="0" Height="80" Width="250"  HorizontalAlignment="Left" 
+                           Visibility="{Binding ElementName=tbComment, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                <TextBox   Name="tbComment" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}"  
+                           Grid.Column="0" Margin="10" Height="80" Width="250"  HorizontalAlignment="Left" 
+                           ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
+                
+                <StackPanel Grid.Column="1" Height="80" HorizontalAlignment="Right" Orientation="Horizontal" Margin="10">
+                    <Button Height="70" Width="100" Style="{StaticResource TabButtonStyle}">
+                        <TextBlock>
+                            <Run>Change</Run><LineBreak/>
+                            <Run>size&amp;</Run><LineBreak/>
+                            <Run>Color</Run>
+                        </TextBlock>
+                    </Button>
+                    <Button Height="70" Width="70" Style="{StaticResource TabButtonStyle}" Content="BUY"></Button>
+                </StackPanel>
+            </Grid>
+            
+            <Grid Grid.Row="1">
+                <Border >
+                    
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

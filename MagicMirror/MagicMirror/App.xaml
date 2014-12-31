@@ -1,0 +1,110 @@
+﻿<Application x:Class="MagicMirror.App"
+             xmlns:local="clr-namespace:MagicMirror"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!--主窗体背景颜色：有透明效果-->
+        <SolidColorBrush x:Key="MainWinBackground">#3375787C</SolidColorBrush>
+        <!--等宽字体-->
+        <FontFamily x:Key="DefaultFamily">宋体,Courier New,MS Mincho,DotumChe</FontFamily>
+        <!--主要的颜色风格：浅黄色-->
+        <SolidColorBrush x:Key="ColorStyle">#F9885C</SolidColorBrush>
+        
+        <Style x:Key="MainWinStyle" TargetType="Window" >
+            <Setter Property="Width" Value="640"></Setter>
+            <Setter Property="Height" Value="800"></Setter>
+            <Setter Property="ResizeMode" Value="NoResize"></Setter>
+            <Setter Property="WindowStyle" Value="None"></Setter>
+            <Setter Property="AllowsTransparency" Value="True"></Setter>
+            <Setter Property="Background" Value="{StaticResource MainWinBackground}"></Setter>
+        </Style>
+        
+        <Style x:Key="btnHideShowStyle" TargetType="ToggleButton">
+            <Setter Property="Width" Value="90"></Setter>
+            <Setter Property="Height" Value="50"></Setter>
+            <Setter Property="Margin" Value="0,10"></Setter>
+            <Setter Property="Padding" Value="5"></Setter>
+            <Setter Property="FontSize" Value="30"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="FontFamily" Value="{StaticResource DefaultFamily}"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Border  VerticalAlignment="Center" BorderThickness="0" Background="{TemplateBinding Background}">
+                            <ContentPresenter Margin="{TemplateBinding Padding}"  RecognizesAccessKey="True" HorizontalAlignment="Center"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Foreground" Value="White"></Setter>
+                    <Setter Property="Background" Value="{StaticResource ColorStyle}"></Setter>
+                    <Setter Property="Content" Value="SHOW"></Setter>
+                </Trigger>
+                <Trigger Property="IsChecked" Value="False">
+                    <Setter Property="Content" Value="HIDE"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+        <Style x:Key="btnCloseStyle" TargetType="Button">
+            <Setter Property="Width" Value="50"></Setter>
+            <Setter Property="Height" Value="50"></Setter>
+            <Setter Property="Margin" Value="5"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border  VerticalAlignment="Center" BorderThickness="0" Background="Transparent">
+                            <Path x:Name="CheckMark" StrokeThickness="2" Stroke="White" Data="M 8 8 L 40 30 M 8 30 L 40 8"></Path>
+                        </Border>                        
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="CheckMark" Property="Stroke" Value="{StaticResource ColorStyle}"/>
+                                <Setter TargetName="CheckMark" Property="StrokeThickness" Value="3"/>
+                                <Setter TargetName="CheckMark" Property="Data" Value="M 6 6 L 42 32 M 6 32 L 42 6"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="TabButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="70"></Setter>
+            <Setter Property="Height" Value="50"></Setter>
+            <Setter Property="Margin" Value="10,5,0,0"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border  VerticalAlignment="Center" BorderThickness="1"  BorderBrush="{StaticResource ColorStyle}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                            <ContentPresenter Margin="{TemplateBinding Padding}" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                              RecognizesAccessKey="True" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="lbBottomProduces" TargetType="ListBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBox">
+                        <Border CornerRadius="5" Background="{TemplateBinding ListBox.Background}">
+                            <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" IsItemsHost="True"/>
+                            </ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+    </Application.Resources>
+</Application>
