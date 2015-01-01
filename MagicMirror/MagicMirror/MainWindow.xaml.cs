@@ -38,7 +38,7 @@ namespace MagicMirror
                     {
                         if (!currentUri.OriginalString.Equals(Config.SlideShowPage))
                         {
-                            NavigationFrame.Navigate(new Uri("/" + Config.SlideShowPage, UriKind.Relative));
+                            //NavigationFrame.Navigate(new Uri("/" + Config.SlideShowPage, UriKind.Relative));
                         }
                     }
                     else

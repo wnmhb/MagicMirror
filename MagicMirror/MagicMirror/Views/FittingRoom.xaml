@@ -7,9 +7,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <Grid.Resources>
-            <Storyboard x:Key="LoadedStoryboard">
-               
-            </Storyboard>
+
         </Grid.Resources>
         
         <Grid.RowDefinitions>
@@ -26,18 +24,19 @@
             </Grid.RowDefinitions>
 
             <!--欢迎信息-->
-            <TextBlock x:Name="tbFittingRooomTitle" Margin="20" FontSize="24" >
+            <TextBlock x:Name="tbFittingRooomTitle" Margin="20" FontSize="24" 
+                       Visibility="{Binding IsChecked, ElementName=btnHideOrShow,Converter={StaticResource boolToVisibilityConverter}}">
                 <Run Foreground="White" Text="WELCOME TO YOUR PERSONAL"></Run>
                 <Run Foreground="{StaticResource ColorStyle}" Text=" FITTING ROOM"></Run>
             </TextBlock>
 
             <!--主体显示内容区-->
-            <Grid x:Name="mainGrid" Grid.Row="1" Margin="20"></Grid>
+            <Grid x:Name="mainGrid" Grid.Row="1" Margin="20" Visibility="{Binding IsChecked, ElementName=btnHideOrShow,Converter={StaticResource boolToVisibilityConverter}}"></Grid>
 
             <!--底部栏目区-->
             <Grid x:Name="bottomGrid" Grid.Row="2" VerticalAlignment="Center" Margin="20,0">
-                <ToggleButton x:Name="btnHideOrShow" Style="{StaticResource btnHideShowStyle}" HorizontalAlignment="Left"
-                              Checked="btnHideOrShow_Checked" Unchecked="btnHideOrShow_Unchecked">
+                <ToggleButton x:Name="btnHideOrShow" Style="{StaticResource btnHideShowStyle}" HorizontalAlignment="Left" IsChecked="False"
+                              Click="btnHideOrShow_Click">
                     <ToggleButton.Triggers>
                         <EventTrigger RoutedEvent="ToggleButton.Click">
                             <EventTrigger.Actions>

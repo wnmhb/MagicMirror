@@ -70,3 +70,4 @@ C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\obj\x86\Debug\MainWin
 C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror.g.resources
 C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror.Properties.Resources.resources
 C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror.csproj.GenerateResource.Cache
+C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
