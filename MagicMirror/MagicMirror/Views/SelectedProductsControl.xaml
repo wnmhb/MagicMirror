@@ -6,6 +6,24 @@
              mc:Ignorable="d"  Background="Transparent"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
+        <Grid.Resources>
+            <Style x:Key="lbSelectedProducesStyle" TargetType="ListBox">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ListBox">
+                            <Border CornerRadius="5" Background="Transparent">
+                                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                                    <WrapPanel VerticalAlignment="Center" IsItemsHost="True" Width="{TemplateBinding Width}">
+
+                                    </WrapPanel>
+                                </ScrollViewer>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -13,13 +31,25 @@
         
         <StackPanel >
             <TextBlock Foreground="White"  FontSize="24" Text="THESE ARE YOU PRODUCTS"></TextBlock>
-            <!--<TextBlock Foreground="{StaticResource ColorStyle}" FontSize="24" Text="TOUCH THE ONE"></TextBlock>
-            <TextBlock Foreground="{StaticResource ColorStyle}"  FontSize="24" Text="YOU'RE TRYING ON"></TextBlock>-->
-            <TextBlock Foreground="White" FontSize="24" Text="TOUCH THE ONE"></TextBlock>
-            <TextBlock Foreground="White"  FontSize="24" Text="YOU'RE TRYING ON"></TextBlock>
-            
-            
+            <TextBlock Foreground="{StaticResource ColorStyle}" FontSize="24" Text="TOUCH THE ONE"></TextBlock>
+            <TextBlock Foreground="{StaticResource ColorStyle}"  FontSize="24" Text="YOU'RE TRYING ON"></TextBlock>
         </StackPanel>
+
+        <Grid>
+            <!--定义常用路径-->
+            <Path x:Name="path1" Data="M 0,-100 C -30,-200 -10,-80 0,0 " Visibility="Collapsed"/>
+            <Path x:Name="path2" Data="M 400,-100 C 600,-100, 400,-200 0,0 " Visibility="Collapsed"/>
+        </Grid>
         
+        <ListBox x:Name="lbSelectedProduces" Grid.Row="1" Style="{StaticResource lbSelectedProducesStyle}">
+            <ListBox.Resources>
+                <Style TargetType="ListBoxItem">
+                    <Style.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent"/>
+                    </Style.Resources>
+                </Style>
+            </ListBox.Resources>
+        </ListBox>
    </Grid>
 </UserControl>

@@ -14,11 +14,11 @@ namespace MagicMirror
         {
             InitializeComponent();
 
-            this.MouseLeftButtonDown += (s,e)=>{
+            this.MouseLeftButtonDown += (s, e) =>
+            {
                 base.OnMouseLeftButtonDown(e);
                 this.DragMove();
             };
-
             RunSlideShowThread();
         }
 
@@ -41,7 +41,8 @@ namespace MagicMirror
                             NavigationFrame.Navigate(new Uri("/" + Config.SlideShowPage, UriKind.Relative));
                         }
                     }
-                    else {
+                    else
+                    {
                         if (!currentUri.OriginalString.Equals(Config.FittingRoomPage))
                         {
                             NavigationFrame.Navigate(new Uri("/" + Config.FittingRoomPage, UriKind.Relative));

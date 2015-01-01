@@ -73,36 +73,14 @@ namespace MagicMirror.Views
 
         private void btnHideOrShow_Checked(object sender, RoutedEventArgs e)
         {
-            PlaySound(Config.SwitchSound);
-
             tbFittingRooomTitle.Visibility = Visibility.Hidden;
             mainGrid.Visibility = Visibility.Hidden;
-            lbSelProducts.Visibility = Visibility.Hidden;
         }
 
         private void btnHideOrShow_Unchecked(object sender, RoutedEventArgs e)
         {
-            PlaySound(Config.SwitchSound);
-
             tbFittingRooomTitle.Visibility = Visibility.Visible;
             mainGrid.Visibility = Visibility.Visible;
-            lbSelProducts.Visibility = Visibility.Visible;
-        }
-
-        private void PlaySound(string soundFile)
-        {
-            if (string.IsNullOrEmpty(soundFile)) return;
-            Thread playThread = new Thread(new ThreadStart(() =>
-            {
-                try
-                {
-                    SoundPlayer player = new SoundPlayer(soundFile);
-                    player.Play();
-                    player.Dispose();
-                }
-                catch { }
-            }));
-            playThread.Start();
         }
 
         #endregion
@@ -116,14 +94,24 @@ namespace MagicMirror.Views
         private void cbAllProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int selIndex = cbAllProducts.SelectedIndex;
-            if (selIndex == -1)
-                return;
+            if (selIndex == -1) return;
+            if (processState == ProcessState.Selecting)
+            {
+                //说明系统处于初始化状态，此时显示的是服装选择界面
+                SelectedProductsControl selectingContol = this.mainGrid.Children[0] as SelectedProductsControl;
+                selectingContol.AddClothing(selectableClothings.ElementAt(selIndex));
+                lbSelProducts.Visibility = Visibility.Hidden;
+            }
+            else {
+                lbSelProducts.Visibility = Visibility.Visible;
+            }
             viewModel.Clothings.Add(selectableClothings.ElementAt(selIndex));
             
             selectableClothings.RemoveAt(selIndex);
         }
 
         #endregion
+
 
         /// <summary>
         /// 窗口关闭释放资源

@@ -6,6 +6,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
+        <Grid.Resources>
+            <Storyboard x:Key="LoadedStoryboard">
+               
+            </Storyboard>
+        </Grid.Resources>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="0.8*"></RowDefinition>
             <RowDefinition Height="0.2*"></RowDefinition>
@@ -29,9 +35,17 @@
             <Grid x:Name="mainGrid" Grid.Row="1" Margin="20"></Grid>
 
             <!--底部栏目区-->
-            <Grid Grid.Row="2" VerticalAlignment="Center" Margin="20,0">
+            <Grid x:Name="bottomGrid" Grid.Row="2" VerticalAlignment="Center" Margin="20,0">
                 <ToggleButton x:Name="btnHideOrShow" Style="{StaticResource btnHideShowStyle}" HorizontalAlignment="Left"
-                              Checked="btnHideOrShow_Checked" Unchecked="btnHideOrShow_Unchecked"></ToggleButton>
+                              Checked="btnHideOrShow_Checked" Unchecked="btnHideOrShow_Unchecked">
+                    <ToggleButton.Triggers>
+                        <EventTrigger RoutedEvent="ToggleButton.Click">
+                            <EventTrigger.Actions>
+                                <SoundPlayerAction Source="Resources/Sound/switch.wav"/>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                    </ToggleButton.Triggers>
+                </ToggleButton>
 
                 <Button x:Name="btnClose" Style="{StaticResource btnCloseStyle}" HorizontalAlignment="Right"  Click="btnClose_Click"></Button>
 

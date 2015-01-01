@@ -10,9 +10,10 @@ namespace MagicMirror
 {
     public class ClothingViewModel
     {
-        public ClothingViewModel() {
+        public ClothingViewModel()
+        {
             Clothings = new ObservableCollection<Clothing>();
-            CurrentIndex=-1;
+            CurrentIndex = -1;
         }
 
         /// <summary>
@@ -24,16 +25,18 @@ namespace MagicMirror
         /// </summary>
         public int CurrentIndex;
 
-        public Clothing CurrentClothing { 
-            get{
+        public Clothing CurrentClothing
+        {
+            get
+            {
                 if (CurrentIndex != -1 && Clothings.Count != 0)
                 {
-                    
+
                     return Clothings[CurrentIndex];
                 }
                 return null;
             }
-            
+
         }
 
 
@@ -50,11 +53,11 @@ namespace MagicMirror
         //            addClothingCommand = new DelegateCommand(
         //                () =>
         //                {
-                           
+
         //                },
         //                () =>
         //                {
-                           
+
 
         //                    return true;
         //                });

@@ -59,6 +59,7 @@
     <Compile Include="DAL\Config.cs" />
     <Compile Include="DAL\DataService.cs" />
     <Compile Include="Models\ProcessState.cs" />
+    <Compile Include="Util\SoundPlayerHelper.cs" />
     <Compile Include="Views\FittingRoom.xaml.cs">
       <DependentUpon>FittingRoom.xaml</DependentUpon>
     </Compile>
@@ -133,19 +134,31 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\Flower1.jpg">
+    <Content Include="Resources\Images\Flower1.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Flower2.jpg">
+    <Content Include="Resources\Images\Flower2.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Leaf1.jpg">
+    <Content Include="Resources\Images\Leaf1.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Leaf2.jpg">
+    <Content Include="Resources\Images\Leaf2.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Winter1.jpg">
+    <Content Include="Resources\Images\RD84151926-1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Winter1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sound\ding.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sound\notify.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sound\switch.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

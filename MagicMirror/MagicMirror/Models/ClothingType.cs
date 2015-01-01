@@ -8,7 +8,7 @@ namespace MagicMirror.Models
     public enum ClothingType
     {
         LADYWEAR,
-        MANWEAR, 
+        MANWEAR,
         JACKET,
         JEANS,
         SUIT,

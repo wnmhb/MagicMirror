@@ -14,13 +14,14 @@ namespace MagicMirror
             ObservableCollection<Clothing> Clothings = new ObservableCollection<Clothing>();
             Clothings.Add(new Clothing()
             {
-                RefId = "2014-5630",
-                Brand = "Nike",
-                Price = 195,
-                Unit = PriceUnit.EUR,
-                Name = "Jacket",
+                RefId = "RD84151926-1",
+                Brand = "ZIMMUR",
+                Price = 229,
+                Unit = PriceUnit.DOLLOAR,
+                Name = "杏色七分袖优雅镂空蕾丝拼接时尚连衣裙",
                 Type = ClothingType.JACKET,
-                MainPhoto = @"..\Images\Flower1.jpg"
+                Sizes = new List<Size> { Size.small, Size.large, Size.xlarge },
+                MainPhoto = @"..\Resources\Images\RD84151926-1.jpg"
             });
 
             Clothings.Add(new Clothing()
@@ -31,7 +32,7 @@ namespace MagicMirror
                 Unit = PriceUnit.EUR,
                 Name = "Jacket",
                 Type = ClothingType.JACKET,
-                MainPhoto = @"..\Images\Winter1.jpg"
+                MainPhoto = @"..\Resources\Images\Winter1.jpg"
             });
 
             Clothings.Add(new Clothing()
@@ -42,7 +43,18 @@ namespace MagicMirror
                 Unit = PriceUnit.EUR,
                 Name = "Jacket",
                 Type = ClothingType.JACKET,
-                MainPhoto = @"..\Images\Leaf1.jpg"
+                MainPhoto = @"..\Resources\Images\Leaf1.jpg"
+            });
+
+            Clothings.Add(new Clothing()
+            {
+                RefId = "2014-4539",
+                Brand = "Nike",
+                Price = 89,
+                Unit = PriceUnit.EUR,
+                Name = "Jacket",
+                Type = ClothingType.JACKET,
+                MainPhoto = @"..\Resources\Images\Leaf2.jpg"
             });
             return Clothings;
         }

@@ -13,15 +13,18 @@ namespace MagicMirror
         /// <summary>
         /// 开始显示图片轮播的系统空闲间隔
         /// </summary>
-        public static int SlideShowIdleSeconds {
-            get {
-                if (slideShowIdleSeconds == 0) {
+        public static int SlideShowIdleSeconds
+        {
+            get
+            {
+                if (slideShowIdleSeconds == 0)
+                {
                     bool parseResult = int.TryParse(GetAppConfig("SlideShowIdleSeconds"), out slideShowIdleSeconds);
-                    if (!parseResult || slideShowIdleSeconds<=0)
+                    if (!parseResult || slideShowIdleSeconds <= 0)
                         slideShowIdleSeconds = 10;
                 }
                 return slideShowIdleSeconds;
-            } 
+            }
         }
 
         private static string switchSound;
@@ -30,8 +33,10 @@ namespace MagicMirror
         /// </summary>
         public static string SwitchSound
         {
-            get {
-                if (string.IsNullOrEmpty(switchSound)) {
+            get
+            {
+                if (string.IsNullOrEmpty(switchSound))
+                {
                     switchSound = GetAppConfig("SwitchSound");
                 }
                 return switchSound;
