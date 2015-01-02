@@ -105,14 +105,13 @@
         </Style>
 
         <Style x:Key="TabButtonStyle" TargetType="Button">
-            <Setter Property="Width" Value="70"></Setter>
-            <Setter Property="Height" Value="50"></Setter>
-            <Setter Property="Margin" Value="10,5,0,0"></Setter>
-            <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="Foreground" Value="{StaticResource ColorStyle}"></Setter>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border  VerticalAlignment="Center" BorderThickness="1"  BorderBrush="{StaticResource ColorStyle}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                        <Border  VerticalAlignment="Center" BorderThickness="1"  BorderBrush="{StaticResource ColorStyle}" 
+                                 Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
                             <ContentPresenter Margin="{TemplateBinding Padding}" 
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
                                               RecognizesAccessKey="True" HorizontalAlignment="Center"/>

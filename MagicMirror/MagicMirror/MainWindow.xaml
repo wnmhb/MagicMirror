@@ -2,8 +2,9 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:MagicMirror.Models"
+        Icon="MagicMirror.ico"
         Title="MainWindow"  Style="{StaticResource MainWinStyle}"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" >
 
     <Frame x:Name="NavigationFrame" Source="/Views/FittingRoom.xaml" BorderThickness="0" NavigationUIVisibility="Hidden" 
            Navigated="NavigationFrame_Navigated">

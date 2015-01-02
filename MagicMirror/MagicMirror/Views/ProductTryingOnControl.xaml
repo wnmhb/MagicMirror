@@ -6,7 +6,6 @@
              mc:Ignorable="d"
              d:DesignHeight="500" d:DesignWidth="500">
     <UserControl.Resources>
-
         <SolidColorBrush x:Key="brushWatermarkBackground" Color="White" />
         <SolidColorBrush x:Key="brushWatermarkForeground" Color="LightSteelBlue" />
         <SolidColorBrush x:Key="brushWatermarkBorder" Color="Indigo" />
@@ -19,23 +18,23 @@
             <RowDefinition Height="0.6*"></RowDefinition>
         </Grid.RowDefinitions>
         
-        <!--主要信息区-->
+        <!--商品基本信息区-->
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.6*"></ColumnDefinition>
                 <ColumnDefinition Width="0.4*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Image Grid.Column="0" Margin="10,10,0,10" Source="{Binding MainPhoto, Mode=TwoWay}" Stretch="Fill"></Image>
+            <Image Margin="10,0,0,10" Source="{Binding MainPhoto, Mode=TwoWay}" Stretch="Fill"></Image>
 
-            <StackPanel Grid.Column="1" Margin="5,10,10,10" Background="#66FFFFFF">
+            <StackPanel Grid.Column="1" Margin="5,0,10,10" Background="#66FFFFFF">
                 <TextBlock Text="{Binding Name, Mode=TwoWay}"></TextBlock>
                 <StackPanel  Orientation="Horizontal" >
-                    <TextBlock  FontStyle="Italic">ref</TextBlock>
-                    <TextBlock Text="{Binding RefId, Mode=TwoWay}" FontStyle="Italic"></TextBlock>
+                    <TextBlock FontStyle="Italic" Text="ref"></TextBlock>
+                    <TextBlock FontStyle="Italic" Text="{Binding RefId, Mode=TwoWay}" ></TextBlock>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0,20">
-                    <TextBlock Text="{Binding Price, Mode=TwoWay}"></TextBlock>
+                    <TextBlock Text="{Binding Price,Mode=TwoWay}"></TextBlock>
                     <TextBlock Text="{Binding Unit, Mode=TwoWay}"></TextBlock>
                 </StackPanel>
 
@@ -50,6 +49,7 @@
                 </StackPanel>
             </StackPanel>
         </Grid>
+        
         <!--操作功能区-->
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
@@ -58,31 +58,33 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             
-            <TextBlock Margin="10,5" FontSize="20">COMMENTS</TextBlock>
+            <TextBlock Margin="10,5" FontSize="20" Foreground="White">COMMENTS</TextBlock>
             
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="1" Margin="10,2">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.25*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 
-                <TextBlock Margin="10" Text="Be the first to comment" FontStyle="Italic" Foreground="{StaticResource brushWatermarkForeground}"
-                           Grid.Column="0" Height="80" Width="250"  HorizontalAlignment="Left" 
+                <TextBlock Text="Be the first to comment" FontStyle="Italic" Foreground="{StaticResource brushWatermarkForeground}"
+                           Height="80" HorizontalAlignment="Left" Width="280"
                            Visibility="{Binding ElementName=tbComment, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
-                <TextBox   Name="tbComment" Background="Transparent" BorderBrush="{StaticResource brushWatermarkBorder}"  
-                           Grid.Column="0" Margin="10" Height="80" Width="250"  HorizontalAlignment="Left" 
+                <TextBox   Name="tbComment" BorderBrush="{StaticResource brushWatermarkBorder}" 
+                           Background="Transparent"
+                           Height="80" HorizontalAlignment="Left" Width="280" 
                            ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
-                
-                <StackPanel Grid.Column="1" Height="80" HorizontalAlignment="Right" Orientation="Horizontal" Margin="10">
-                    <Button Height="70" Width="100" Style="{StaticResource TabButtonStyle}">
-                        <TextBlock>
-                            <Run>Change</Run><LineBreak/>
-                            <Run>size&amp;</Run><LineBreak/>
-                            <Run>Color</Run>
-                        </TextBlock>
-                    </Button>
-                    <Button Height="70" Width="70" Style="{StaticResource TabButtonStyle}" Content="BUY"></Button>
-                </StackPanel>
+
+                <Button x:Name="btnChangeSizeColor" Grid.Column="1"  Height="80" Width="110" 
+                        Style="{StaticResource TabButtonStyle}" Margin="25,0,0,0">
+                    <TextBlock>
+                            <Run>CHANGE</Run><LineBreak/>
+                            <Run>SIZE &amp;</Run><LineBreak/>
+                            <Run>COLOR</Run>
+                    </TextBlock>
+                </Button>
+                <Button x:Name="btnBuy" Grid.Column="2" Height="80" Width="110" Margin="25,0,0,0"
+                            Style="{StaticResource TabButtonStyle}" Content="BUY"></Button>
             </Grid>
             
             <Grid Grid.Row="1">

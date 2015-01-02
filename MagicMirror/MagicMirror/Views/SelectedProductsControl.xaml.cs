@@ -29,13 +29,18 @@ namespace MagicMirror.Views
         {
             InitializeComponent();
             Clothings = new ObservableCollection<Clothing>();
-
             //lbSelectedProduces.ItemsSource = Clothings;
+            firstProductSlidInPath = this.Resources["path1"] as Path;
+            otherProductSlidInPath = this.Resources["path2"] as Path;
         }
+
+        private ObservableCollection<Clothing> Clothings;
+
         public delegate void ProductSelected(string pruductRefId);
         public event ProductSelected productedSelectedHandler;
 
-        private ObservableCollection<Clothing> Clothings;
+        private Path firstProductSlidInPath;
+        private Path otherProductSlidInPath;
 
         public void AddClothing(Clothing product)
         {
@@ -61,12 +66,12 @@ namespace MagicMirror.Views
 
             if (Clothings.Count == 1)
             {
-                animationX.PathGeometry = path1.Data.GetFlattenedPathGeometry();
-                animationY.PathGeometry = path1.Data.GetFlattenedPathGeometry();
+                animationX.PathGeometry = firstProductSlidInPath.Data.GetFlattenedPathGeometry();
+                animationY.PathGeometry = firstProductSlidInPath.Data.GetFlattenedPathGeometry();
             }
             else {
-                animationX.PathGeometry = path2.Data.GetFlattenedPathGeometry();
-                animationY.PathGeometry = path2.Data.GetFlattenedPathGeometry();
+                animationX.PathGeometry = otherProductSlidInPath.Data.GetFlattenedPathGeometry();
+                animationY.PathGeometry = otherProductSlidInPath.Data.GetFlattenedPathGeometry();
             }
 
             animationX.Source = PathAnimationSource.X;
@@ -176,6 +181,7 @@ namespace MagicMirror.Views
             }
             storybord.Completed += (s, arg) =>
             {
+                SoundPlayerHelper.PlaySound("Resources/Sound/ding.wav");
                 if (productedSelectedHandler != null)
                 {
                     productedSelectedHandler(Clothings[lbSelectedProduces.SelectedIndex].RefId);

@@ -24,7 +24,7 @@
             </Grid.RowDefinitions>
 
             <!--欢迎信息-->
-            <TextBlock x:Name="tbFittingRooomTitle" Margin="20" FontSize="24" 
+            <TextBlock x:Name="tbFittingRooomTitle" Margin="20,10" FontSize="24" 
                        Visibility="{Binding IsChecked, ElementName=btnHideOrShow,Converter={StaticResource boolToVisibilityConverter}}">
                 <Run Foreground="White" Text="WELCOME TO YOUR PERSONAL"></Run>
                 <Run Foreground="{StaticResource ColorStyle}" Text=" FITTING ROOM"></Run>
