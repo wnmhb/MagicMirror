@@ -15,6 +15,7 @@ using System.Collections.ObjectModel;
 using MagicMirror.Models;
 using System.Threading;
 using System.Media;
+using System.Windows.Media.Animation;
 
 namespace MagicMirror.Views
 {
@@ -48,6 +49,8 @@ namespace MagicMirror.Views
             selectingContol.productedSelectedHandler += new SelectedProductsControl.ProductSelected(selectingContol_productedSelectedHandler);
             //默认加载选择的服装列表
             mainGrid.Children.Add(selectingContol);
+
+            spSeledProducts.Visibility = Visibility.Hidden;
         }
 
         private void selectingContol_productedSelectedHandler(string pruductRefId)
@@ -55,8 +58,8 @@ namespace MagicMirror.Views
             //进入试衣环节
             processState = ProcessState.Trying;
             this.mainGrid.Children.Clear();
-            lbSelProducts.Visibility = Visibility.Visible;
-
+            spSeledProducts.Visibility = Visibility.Visible;
+            
             for (int i = 0; i < viewModel.Clothings.Count; i++)
             {
                 if (viewModel.Clothings[i].RefId == pruductRefId) {
@@ -93,10 +96,10 @@ namespace MagicMirror.Views
             {
                 //说明系统处于初始化状态，此时显示的是服装选择界面
                 selectingContol.AddClothing(selectableClothings.ElementAt(selIndex));
-                lbSelProducts.Visibility = Visibility.Hidden;
             }
             viewModel.Clothings.Add(selectableClothings.ElementAt(selIndex));
-            
+            if (processState == ProcessState.Trying)
+                (this.Resources["notifyProducedAddedStoryboard"] as Storyboard).Begin(this);
             selectableClothings.RemoveAt(selIndex);
         }
 
@@ -119,5 +122,6 @@ namespace MagicMirror.Views
                 lbSelProducts.Visibility = btnHideOrShow.IsChecked == true ? Visibility.Hidden : Visibility.Visible;
             }
         }
+
     }
 }

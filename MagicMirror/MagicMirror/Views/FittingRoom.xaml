@@ -5,11 +5,21 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <Grid.Resources>
-
-        </Grid.Resources>
-        
+    <UserControl.Resources>
+        <Storyboard x:Key="notifyProducedAddedStoryboard">
+            <DoubleAnimation Duration="0:0:01" From="50"  To="-50" Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)" Storyboard.TargetName="tbNotification">
+                <DoubleAnimation.EasingFunction>
+                    <QuadraticEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="tbNotification">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:01" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    
+    <Grid>        
         <Grid.RowDefinitions>
             <RowDefinition Height="0.8*"></RowDefinition>
             <RowDefinition Height="0.2*"></RowDefinition>
@@ -18,7 +28,7 @@
         <!--主体显示页面-->
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition Height="70"></RowDefinition>
                 <RowDefinition Height="0.8*"></RowDefinition>
                 <RowDefinition Height="100"></RowDefinition>
             </Grid.RowDefinitions>
@@ -48,57 +58,73 @@
 
                 <Button x:Name="btnClose" Style="{StaticResource btnCloseStyle}" HorizontalAlignment="Right"  Click="btnClose_Click"></Button>
 
-                <ListBox x:Name="lbSelProducts" Background="Transparent" Width="320" HorizontalAlignment="Center"
+                <Grid HorizontalAlignment="Center">
+                    <TextBlock x:Name="tbNotification" Text="" Opacity="0" HorizontalAlignment="Center" FontSize="16">
+                        <TextBlock.RenderTransform>
+                            <TranslateTransform></TranslateTransform>
+                        </TextBlock.RenderTransform>
+                    
+                        <Run Foreground="White">+1</Run>
+                        <Run Foreground="{StaticResource ColorStyle}">Product added</Run>
+                    </TextBlock>
+                    <StackPanel x:Name="spSeledProducts">
+                        <TextBlock Text="Products in your hand.Touch one to return" Foreground="White" FontSize="14" HorizontalAlignment="Center"></TextBlock>
+                        <ListBox x:Name="lbSelProducts" Background="Transparent" Width="320" 
                          SelectionChanged="lbProducts_SelectionChanged" Style="{StaticResource lbBottomProduces}">
-                    <ListBox.Resources>
-                        <Style TargetType="ListBoxItem">
-                            <Setter Property="Opacity" Value="0.5" />
-                            <Setter Property="MaxHeight" Value="75" />
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="ListBoxItem">
-                                        <Border Margin="3">
-                                            <Image Source="{Binding MainPhoto}"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                            <Style.Triggers>
-                                <Trigger Property="IsSelected" Value="True">
-                                    <Trigger.Setters>
-                                        <Setter Property="Opacity" Value="1.0" />
-                                    </Trigger.Setters>
-                                </Trigger>
-                                <EventTrigger RoutedEvent="Mouse.MouseEnter">
-                                    <EventTrigger.Actions>
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <DoubleAnimation Duration="0:0:0.2" Storyboard.TargetProperty="MaxHeight" To="90"/>
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </EventTrigger.Actions>
-                                </EventTrigger>
-                                <EventTrigger RoutedEvent="Mouse.MouseLeave">
-                                    <EventTrigger.Actions>
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <DoubleAnimation Duration="0:0:1" Storyboard.TargetProperty="MaxHeight"  />
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </EventTrigger.Actions>
-                                </EventTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </ListBox.Resources>
-                </ListBox>
+                            <ListBox.Resources>
+                                <Style TargetType="ListBoxItem">
+                                    <Setter Property="Opacity" Value="0.5" />
+                                    <Setter Property="MaxHeight" Value="75" />
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ListBoxItem">
+                                                <Border Margin="3">
+                                                    <Image Source="{Binding MainPhoto}"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Trigger.Setters>
+                                                <Setter Property="Opacity" Value="1.0" />
+                                            </Trigger.Setters>
+                                        </Trigger>
+                                        <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                                            <EventTrigger.Actions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Duration="0:0:0.2" Storyboard.TargetProperty="MaxHeight" To="90"/>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger.Actions>
+                                        </EventTrigger>
+                                        <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                                            <EventTrigger.Actions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Duration="0:0:1" Storyboard.TargetProperty="MaxHeight"  />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger.Actions>
+                                        </EventTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </ListBox.Resources>
+                        </ListBox>
+                    </StackPanel>
+                    
+                    
+                    
+                </Grid>
             </Grid>
         </Grid>
 
         <!--模拟感应区，手动添加到试衣列表中-->
         <StackPanel x:Name="spSimulateSense" Grid.Row="1" Orientation="Horizontal" Margin="20" 
                       VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Text="可选项:" VerticalAlignment="Center" FontSize="20"></TextBlock>
-            <ComboBox x:Name="cbAllProducts"  Margin="10,0" IsEditable="True" Width="250" Height="32"
+            <TextBlock Text="可选产品:" VerticalAlignment="Center" FontSize="20"></TextBlock>
+            <ComboBox x:Name="cbAllProducts"  Margin="20,0" IsEditable="True" Width="250" Height="32"
                       DisplayMemberPath="RefId" SelectedValuePath="RefId"
                       SelectionChanged="cbAllProducts_SelectionChanged"></ComboBox>
         </StackPanel>

@@ -10,48 +10,75 @@
         <SolidColorBrush x:Key="brushWatermarkForeground" Color="LightSteelBlue" />
         <SolidColorBrush x:Key="brushWatermarkBorder" Color="Indigo" />
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        
+        <Storyboard x:Key="LoadStoryboard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="gridProductBasicInfo">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.4"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="gridProductBasicInfo">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.4"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="gridOperation">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:01" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
     </UserControl.Resources>
     
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.4*"></RowDefinition>
+            <RowDefinition Height="0.45*"></RowDefinition>
             <RowDefinition Height="0.6*"></RowDefinition>
         </Grid.RowDefinitions>
-        
         <!--商品基本信息区-->
-        <Grid>
+        <Grid x:Name="gridProductBasicInfo">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.6*"></ColumnDefinition>
                 <ColumnDefinition Width="0.4*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
+            
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform CenterX="300" CenterY="40"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            
             <Image Margin="10,0,0,10" Source="{Binding MainPhoto, Mode=TwoWay}" Stretch="Fill"></Image>
 
             <StackPanel Grid.Column="1" Margin="5,0,10,10" Background="#66FFFFFF">
-                <TextBlock Text="{Binding Name, Mode=TwoWay}"></TextBlock>
-                <StackPanel  Orientation="Horizontal" >
-                    <TextBlock FontStyle="Italic" Text="ref"></TextBlock>
-                    <TextBlock FontStyle="Italic" Text="{Binding RefId, Mode=TwoWay}" ></TextBlock>
+                <TextBlock Text="{Binding Name, Mode=TwoWay}" TextWrapping="Wrap" Margin="5,5,0,0"
+                           FontSize="16" FontFamily="Georgia,宋体,微软雅黑" Foreground="Black"></TextBlock>
+                <TextBlock Text="{Binding Brand}" Margin="5,5,0,0" FontSize="16" Foreground="LightSkyBlue" ></TextBlock>
+                <StackPanel  Orientation="Horizontal" Margin="5,5,0,0">
+                    <TextBlock FontStyle="Italic" Text="ref:" FontSize="14"></TextBlock>
+                    <TextBlock FontStyle="Italic" Text="{Binding RefId, Mode=TwoWay}" FontSize="14"></TextBlock>
                 </StackPanel>
 
-                <StackPanel Orientation="Horizontal" Margin="0,20">
-                    <TextBlock Text="{Binding Price,Mode=TwoWay}"></TextBlock>
-                    <TextBlock Text="{Binding Unit, Mode=TwoWay}"></TextBlock>
+                <StackPanel Orientation="Horizontal" Margin="5,20,0,5">
+                    <TextBlock Text="{Binding Price,Mode=TwoWay}" FontSize="16" FontFamily="Calibri"></TextBlock>
+                    <!--<TextBlock Text="{Binding Unit, Mode=TwoWay}" FontSize="16" FontFamily="Calibri"></TextBlock>-->
                 </StackPanel>
 
-                <StackPanel  Margin="0,10">
+                <StackPanel  Margin="5" Orientation="Horizontal">
                     <TextBlock>Color</TextBlock>
-                    <Image></Image>
+                    <TextBlock Text="{Binding Price,Mode=TwoWay}" FontSize="16" FontFamily="Calibri"></TextBlock>
                 </StackPanel>
 
-                <StackPanel  Margin="0,10">
+                <StackPanel  Margin="5" Orientation="Horizontal">
                     <TextBlock>Size</TextBlock>
-                    <Image></Image>
+                    <TextBlock Text="{Binding Price,Mode=TwoWay}" FontSize="16" FontFamily="Calibri"></TextBlock>
                 </StackPanel>
             </StackPanel>
         </Grid>
         
         <!--操作功能区-->
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" x:Name="gridOperation">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>

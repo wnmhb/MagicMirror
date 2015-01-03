@@ -71,3 +71,4 @@ C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\obj\x86\Debug\MagicMi
 C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror.Properties.Resources.resources
 C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror.csproj.GenerateResource.Cache
 C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\bin\Debug\MagicMirror.ico

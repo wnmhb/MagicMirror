@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MagicMirror.Models;
+using System.Windows.Media.Animation;
 
 namespace MagicMirror.Views
 {
@@ -27,6 +28,7 @@ namespace MagicMirror.Views
         {
             InitializeComponent();
             this.ClothTringOn = ClothTringOn;
+            (this.Resources["LoadStoryboard"] as Storyboard).Begin(this);
         }
 
         private Clothing clothTringOn;
