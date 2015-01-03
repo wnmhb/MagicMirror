@@ -14,47 +14,47 @@ namespace MagicMirror
             ObservableCollection<Clothing> Clothings = new ObservableCollection<Clothing>();
             Clothings.Add(new Clothing()
             {
-                RefId = "RD84151926-1",
+                RefId = "RD84151926",
                 Brand = "ZIMMUR",
                 Price = 229,
                 Unit = PriceUnit.DOLLOAR,
                 Name = "杏色七分袖优雅镂空蕾丝拼接时尚连衣裙",
-                Type = ClothingType.JACKET,
+                Type = ClothingType.DRESS,
                 Sizes = new List<Size> { Size.small, Size.large, Size.xlarge },
-                MainPhoto = @"..\Resources\Images\RD84151926-1.jpg"
+                MainPhoto = @"..\Resources\Images\p1.jpg"
             });
 
             Clothings.Add(new Clothing()
             {
-                RefId = "2014-5631",
+                RefId = "RD04125596",
                 Brand = "Nike",
                 Price = 125,
                 Unit = PriceUnit.EUR,
-                Name = "Jacket",
-                Type = ClothingType.JACKET,
-                MainPhoto = @"..\Resources\Images\Winter1.jpg"
+                Name = "Dress",
+                Type = ClothingType.DRESS,
+                MainPhoto = @"..\Resources\Images\p2.png"
             });
 
             Clothings.Add(new Clothing()
             {
-                RefId = "2014-4538",
+                RefId = "RD60125482",
                 Brand = "Nike",
                 Price = 89,
                 Unit = PriceUnit.EUR,
-                Name = "Jacket",
-                Type = ClothingType.JACKET,
-                MainPhoto = @"..\Resources\Images\Leaf1.jpg"
+                Name = "Dress",
+                Type = ClothingType.DRESS,
+                MainPhoto = @"..\Resources\Images\p3.png"
             });
 
             Clothings.Add(new Clothing()
             {
-                RefId = "2014-4539",
+                RefId = "RD60124539",
                 Brand = "Nike",
                 Price = 89,
                 Unit = PriceUnit.EUR,
-                Name = "Jacket",
-                Type = ClothingType.JACKET,
-                MainPhoto = @"..\Resources\Images\Leaf2.jpg"
+                Name = "Coat",
+                Type = ClothingType.DRESS,
+                MainPhoto = @"..\Resources\Images\p4.jpg"
             });
             return Clothings;
         }
