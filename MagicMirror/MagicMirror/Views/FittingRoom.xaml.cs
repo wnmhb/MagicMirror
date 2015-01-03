@@ -119,7 +119,7 @@ namespace MagicMirror.Views
         {
             if (processState == ProcessState.Trying)
             {
-                spSeledProducts.Visibility = btnHideOrShow.IsChecked == true ? Visibility.Hidden : Visibility.Visible;
+                lbSelProducts.Visibility = btnHideOrShow.IsChecked == true ? Visibility.Hidden : Visibility.Visible;
             }
         }
 

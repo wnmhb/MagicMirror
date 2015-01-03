@@ -62,17 +62,17 @@
 
                 <StackPanel Orientation="Horizontal" Margin="5,20,0,5">
                     <TextBlock Text="{Binding Price,Mode=TwoWay}" FontSize="16" FontFamily="Calibri"></TextBlock>
-                    <TextBlock Text="EUR" FontSize="16" FontFamily="Calibri"></TextBlock>
+                    <!--<TextBlock Text="{Binding Unit, Mode=TwoWay}" FontSize="16" FontFamily="Calibri"></TextBlock>-->
                 </StackPanel>
 
                 <StackPanel  Margin="5" Orientation="Horizontal">
-                    <TextBlock FontSize="13" Text="Color:"></TextBlock>
-                    <TextBlock Text="sky blue" FontSize="13" ></TextBlock>
+                    <TextBlock>Color</TextBlock>
+                    <TextBlock Text="{Binding Price,Mode=TwoWay}" FontSize="16" FontFamily="Calibri"></TextBlock>
                 </StackPanel>
 
                 <StackPanel  Margin="5" Orientation="Horizontal">
-                    <TextBlock FontSize="13" Text="Size:"></TextBlock>
-                    <TextBlock Text="medium" FontSize="13" ></TextBlock>
+                    <TextBlock>Size</TextBlock>
+                    <TextBlock Text="{Binding Price,Mode=TwoWay}" FontSize="16" FontFamily="Calibri"></TextBlock>
                 </StackPanel>
             </StackPanel>
         </Grid>

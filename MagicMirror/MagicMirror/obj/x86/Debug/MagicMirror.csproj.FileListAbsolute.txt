@@ -41,6 +41,12 @@ E:\Development\MagicMirror\MagicMirror\obj\x86\Debug\Views\ProductsSlideShow.g.c
 C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\bin\Debug\MagicMirror.exe.config
 C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror.exe
 C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror.pdb
+C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\bin\Debug\Resources\Images\Flower1.jpg
+C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\bin\Debug\Resources\Images\Flower2.jpg
+C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\bin\Debug\Resources\Images\Leaf1.jpg
+C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\bin\Debug\Resources\Images\Leaf2.jpg
+C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\bin\Debug\Resources\Images\RD84151926-1.jpg
+C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\bin\Debug\Resources\Images\Winter1.jpg
 C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\bin\Debug\Resources\Sound\ding.wav
 C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\bin\Debug\Resources\Sound\notify.wav
 C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\bin\Debug\Resources\Sound\switch.wav
@@ -66,7 +72,3 @@ C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\obj\x86\Debug\MagicMi
 C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\obj\x86\Debug\MagicMirror.csproj.GenerateResource.Cache
 C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\bin\Debug\MagicMirror.ico
-C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\bin\Debug\Resources\Images\p1.jpg
-C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\bin\Debug\Resources\Images\p2.png
-C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\bin\Debug\Resources\Images\p3.png
-C:\Users\wadexmy\E\Git\MagicMirror\MagicMirror\MagicMirror\bin\Debug\Resources\Images\p4.jpg
