@@ -79,7 +79,7 @@
                                         <Setter.Value>
                                             <ControlTemplate TargetType="ListBoxItem">
                                                 <Border Margin="3">
-                                                    <Image Source="{Binding MainPhoto}"/>
+                                                    <Image Source="{Binding MainPhoto}" />
                                                 </Border>
                                             </ControlTemplate>
                                         </Setter.Value>
@@ -113,9 +113,6 @@
                             </ListBox.Resources>
                         </ListBox>
                     </StackPanel>
-                    
-                    
-                    
                 </Grid>
             </Grid>
         </Grid>

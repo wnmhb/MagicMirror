@@ -48,7 +48,7 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </Grid.RenderTransform>
-            
+
             <Image Margin="10,0,0,10" Source="{Binding MainPhoto, Mode=TwoWay}" Stretch="Fill"></Image>
 
             <StackPanel Grid.Column="1" Margin="5,0,10,10" Background="#66FFFFFF">

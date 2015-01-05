@@ -50,8 +50,9 @@ namespace MagicMirror.Views
             item.Name = "product" + Clothings.Count;
             item.Margin = new Thickness(20, 10, 20, 10);
             Image image = new Image();
-           
-            image.Source = new BitmapImage(new Uri(product.MainPhoto, UriKind.Relative));
+            BitmapImage bmg = new BitmapImage(new Uri(product.MainPhoto, UriKind.Relative));
+            image.Source = bmg;
+            
             item.Content = image;
             lbSelectedProduces.Items.Add(item);
             this.RegisterName(item.Name, item);

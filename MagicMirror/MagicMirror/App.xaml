@@ -16,6 +16,10 @@
 
         <local:BoolToVisibilityConverter x:Key="boolToVisibilityConverter"></local:BoolToVisibilityConverter>
 
+        <Style TargetType="Image">
+            <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"></Setter>
+        </Style>
+        
         <Style x:Key="MainWinStyle" TargetType="Window" >
             <Setter Property="Width" Value="640"></Setter>
             <Setter Property="Height" Value="800"></Setter>

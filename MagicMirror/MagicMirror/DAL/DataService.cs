@@ -49,7 +49,7 @@ namespace MagicMirror
             Clothings.Add(new Clothing()
             {
                 RefId = "RD60124539",
-                Brand = "Nike",
+                Brand = "Ladyhaha",
                 Price = 89,
                 Unit = PriceUnit.EUR,
                 Name = "Coat",
